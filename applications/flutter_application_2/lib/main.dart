@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
 main() {
   runApp(const MainPage());
 }
@@ -77,3 +78,23 @@ class _MainPageState extends State<MainPage> {
 //     );
 //   }
 // }
+=======
+void main() {
+  runApp(const MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text('Hello World!'),
+        ),
+      ),
+    );
+  }
+}
+>>>>>>> 81b2d67 (	new file:   applications/flutter_application_1/.gitignore)
