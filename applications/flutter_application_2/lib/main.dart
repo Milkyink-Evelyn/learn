@@ -4,12 +4,21 @@ void main(List<String> args) {
   runApp(MainPage());
 }
 
-class MainPage extends StatelessWidget {
+//有状态组件 第一个类 对外
+class MainPage extends StatefulWidget {
   
+  @override
+  State<StatefulWidget> createState() {
+    return _MainPageState();
+  }
+}
+//有状态组件 第二个类 对内
+class _MainPageState extends State<MainPage> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Flutter组件初体验-无状态组件",
+      title: "Flutter组件初体验-有状态组件",
       home: Scaffold(
         appBar: AppBar(
           title: Text("顶部区域"),
