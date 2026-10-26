@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
-  runApp(MainPage());
+  runApp(const MainPage());
 }
 
 class MainPage extends StatefulWidget {
@@ -12,29 +12,38 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int count = 0;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(onPressed: () {
-                setState(() {
-                  --count;
-                });
-              }, child: Text("-")),
-              Text(count.toString()),
-              TextButton(onPressed: () {
-                setState(() {
-                  ++count;
-                });
-              }, child: Text("+")),
-          ],
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text('登录'),
+          centerTitle: true,
         ),
+        body: Padding(
+          padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
+          child: Column(
+            spacing: 15,
+            children: [
+              TextField(
+                decoration: InputDecoration(
+                  fillColor: Colors.amber,
+                  filled: true,
+                  hintText: "请输入账号",
+                ),
+              ),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  fillColor: Colors.amber,
+                  filled: true,
+                  hintText: "请输入密码",
+                ),
+              ),
+              TextButton(onPressed: () {}, child: Text("登录")),
+            ],
+          ),
         )
       ),
     );
